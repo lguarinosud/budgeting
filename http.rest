@@ -1,0 +1,109 @@
+
+// Dev
+
+// USER ENDPOINT
+
+### get all users
+GET http://localhost:3000/users/  
+
+
+### get users by id: e.g.: 
+GET http://localhost:3000/users/6726a669a20cc94e69a81d25
+
+
+### Create a user
+POST http://localhost:3000/users/ HTTP/1.1
+content-type: application/json
+
+{
+  "email": "user@example.com",
+  "passwordHash": "hashed_password",
+  "name": "John Doe",
+}
+### Update a user
+PUT http://localhost:3000/users/{insert userId} HTTP/1.1
+content-type: application/json
+
+{
+  "email": "user@example.com",
+  "passwordHash": "hashed_password",
+  "name": "John Doe",
+}
+
+### delete a user
+DELETE http://localhost:3000/users/{insert userId} HTTP/1.1
+
+
+
+
+// BUDGET ENDPOINT
+
+### get all budgets
+GET http://localhost:3000/budgets/  
+
+
+### get users by id: e.g.: 
+GET http://localhost:3000/users/6726a669a20cc94e69a81d25
+
+
+### Create a user
+POST http://localhost:3000/users/ HTTP/1.1
+content-type: application/json
+
+{
+  "email": "user@example.com",
+  "passwordHash": "hashed_password",
+  "name": "John Doe",
+}
+### Update a user
+PUT http://localhost:3000/users/{insert userId} HTTP/1.1
+content-type: application/json
+
+{
+  "email": "user@example.com",
+  "passwordHash": "hashed_password",
+  "name": "John Doe",
+}
+
+### delete a user
+DELETE http://localhost:3000/users/{insert userId} HTTP/1.1
+
+
+
+
+
+// Production
+### get all users
+GET https://prod_domain/users/  
+
+
+### get users by id: e.g.: 
+GET https://prod_domain/6726a669a20cc94e69a81d25 
+
+
+### Create a user
+POST https://prod_domain/users/ HTTP/1.1
+content-type: application/json
+
+{
+  "email": "user@example.com",
+  "passwordHash": "hashed_password",
+  "name": "John Doe",
+}
+
+### Update a user
+PUT https://prod_domain/users/672e5d43b2a656f9cc96d027 HTTP/1.1
+content-type: application/json
+
+{
+  "email": "user@example.com",
+  "passwordHash": "hashed_password",
+  "name": "John Doe",
+}
+
+### delete a user
+DELETE https://prod_domain/users/672e5d43b2a656f9cc96d027 HTTP/1.1
+
+
+
+

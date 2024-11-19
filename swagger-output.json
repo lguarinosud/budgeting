@@ -2,7 +2,7 @@
   "swagger": "2.0",
   "info": {
     "title": "Contact API",
-    "description": "To interact with my contacts DB",
+    "description": "To interact with my budget DB",
     "version": "1.0.0"
   },
   "host": "localhost:3000",
@@ -24,7 +24,7 @@
         }
       }
     },
-    "/contacts/": {
+    "/users/": {
       "get": {
         "description": "",
         "produces": [
@@ -41,7 +41,7 @@
       },
       "post": {
         "tags": [
-          "contacts"
+          "user"
         ],
         "description": "",
         "parameters": [
@@ -51,19 +51,13 @@
             "schema": {
               "type": "object",
               "properties": {
-                "firstName": {
-                  "example": "any"
-                },
-                "lastName": {
-                  "example": "any"
-                },
                 "email": {
                   "example": "any"
                 },
-                "favouriteColor": {
+                "passwordHash": {
                   "example": "any"
                 },
-                "birthday": {
+                "name": {
                   "example": "any"
                 }
               }
@@ -83,10 +77,10 @@
         }
       }
     },
-    "/contacts/{id}": {
+    "/users/{id}": {
       "get": {
         "tags": [
-          "contacts"
+          "users"
         ],
         "description": "",
         "produces": [
@@ -117,7 +111,7 @@
       },
       "put": {
         "tags": [
-          "contacts"
+          "users"
         ],
         "description": "",
         "parameters": [
@@ -133,19 +127,13 @@
             "schema": {
               "type": "object",
               "properties": {
-                "firstName": {
-                  "example": "any"
-                },
-                "lastName": {
-                  "example": "any"
-                },
                 "email": {
                   "example": "any"
                 },
-                "favouriteColor": {
+                "passwordHash": {
                   "example": "any"
                 },
-                "birthday": {
+                "name": {
                   "example": "any"
                 }
               }
@@ -166,7 +154,7 @@
       },
       "delete": {
         "tags": [
-          "contacts"
+          "users"
         ],
         "description": "",
         "parameters": [
@@ -180,6 +168,175 @@
         "responses": {
           "204": {
             "description": "No Content"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/budgets/": {
+      "get": {
+        "description": "",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Budget"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "userId": {
+                  "example": "any"
+                },
+                "month": {
+                  "example": "any"
+                },
+                "income": {
+                  "example": "any"
+                },
+                "savings": {
+                  "example": "any"
+                },
+                "expenses": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "412": {
+            "description": "Precondition Failed"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/budgets/{id}": {
+      "get": {
+        "tags": [
+          "budgets"
+        ],
+        "description": "",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "budgets"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "userId": {
+                  "example": "any"
+                },
+                "month": {
+                  "example": "any"
+                },
+                "income": {
+                  "example": "any"
+                },
+                "savings": {
+                  "example": "any"
+                },
+                "expenses": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "412": {
+            "description": "Precondition Failed"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "budgets"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
           },
           "500": {
             "description": "Internal Server Error"
