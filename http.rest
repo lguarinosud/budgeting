@@ -4,7 +4,7 @@
 // USER ENDPOINT
 
 ### get all users
-GET http://localhost:3000/users/  
+GET http://localhost:3000/budgets/  
 
 
 ### get users by id: e.g.: 
@@ -74,25 +74,25 @@ DELETE http://localhost:3000/users/{insert userId} HTTP/1.1
 
 // Production
 ### get all users
-GET https://prod_domain/users/  
+GET https://budgeting-mmqx.onrender.com/users/  
 
 
 ### get users by id: e.g.: 
-GET https://prod_domain/6726a669a20cc94e69a81d25 
+GET https://budgeting-mmqx.onrender.com/6726a669a20cc94e69a81d25 
 
 
 ### Create a user
-POST https://prod_domain/users/ HTTP/1.1
+POST https://budgeting-mmqx.onrender.com/users/ HTTP/1.1
 content-type: application/json
 
 {
-  "email": "user@example.com",
-  "passwordHash": "hashed_password",
-  "name": "John Doe",
+  "email": "test@user.com",
+  "passwordHash": "password123",
+  "name": "Carlos Bota"
 }
 
 ### Update a user
-PUT https://prod_domain/users/672e5d43b2a656f9cc96d027 HTTP/1.1
+PUT https://budgeting-mmqx.onrender.com/users/672e5d43b2a656f9cc96d027 HTTP/1.1
 content-type: application/json
 
 {
@@ -102,7 +102,7 @@ content-type: application/json
 }
 
 ### delete a user
-DELETE https://prod_domain/users/672e5d43b2a656f9cc96d027 HTTP/1.1
+DELETE https://budgeting-mmqx.onrender.com/users/672e5d43b2a656f9cc96d027 HTTP/1.1
 
 
 

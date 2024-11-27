@@ -3,15 +3,16 @@ const router = express.Router();
 
 const budgetsController = require('../controllers/budgets');
 const validation = require('../middleware/validate');
+const { isAuthenticated } = require('../middleware/authenticate');
 
 router.get('/', budgetsController.getAll);
 
 router.get('/:id', budgetsController.getSingle);
 
-router.post('/', validation.saveBudget, budgetsController.createBudget);
+router.post('/', isAuthenticated, validation.saveBudget, budgetsController.createBudget);
 
-router.put('/:id', validation.saveBudget, budgetsController.updateBudget);
+router.put('/:id', isAuthenticated, validation.saveBudget, budgetsController.updateBudget);
 
-router.delete('/:id', budgetsController.deleteBudget);
+router.delete('/:id', isAuthenticated, budgetsController.deleteBudget);
 
 module.exports = router;
